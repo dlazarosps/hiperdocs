@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
+    
+    <!-- Load c3.css -->
+    <link href="node_modules/c3/c3.css" rel="stylesheet">
+    
+    <!-- Load d3.js and c3.js -->
+    <script src="node_modules/d3/dist/d3.min.js" charset="utf-8"></script>
+    <script src="node_modules/c3/c3.min.js"></script>
+    
+    <title>HiperDocs!</title>
+  </head>
+  <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="row align-items-center h-100">
+                        <div class="col-3"></div>
+                        <div class="col-6 h-75">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="75%" viewBox="0 0 14 16">
+                                <path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8h-2.5z" />
+                            </svg>
+                            <p class="lead text-center">Logo</p>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="jumbotron jumbotron-fluid">
+                        <h1>Projeto de HiperDocumentos</h1>
+                        <p class="lead">Prototipo</p>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+            
+        <div class="container-fluid">
+            
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            &nbsp;
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <h3> Onda </h3>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 p-3">
+                            <div id="chart"></div>
+                            <script type="text/javascript">
+                                var chart = c3.generate({
+                                        data: {
+                                            x: 'x',
+                                            columns: [
+                                                ['x', '0', '45', '90', '135', '180', '225', '270', '315', '360'],
+                                                ['Onda', 0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7, 0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7]
+                                            ],
+                                            type: 'spline'
+                                        },
+                                        axis: {
+                                            x: {
+                                                type: 'category' // this needed to load string x value
+                                            }
+                                        },
+                                        grid: {
+                                            y: {
+                                                lines: [
+                                                    { value: 0, text: '' }
+                                                ]
+                                            },
+                                            x: {
+                                                lines: [
+                                                    { value: '90', text: '' },
+                                                    { value: String.fromCharCode(960)+'/2', text: '' }
+                                                ]
+                                            }
+                                        }
+                                    });
+
+                               
+
+                            </script>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 ">
+                            &nbsp;
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 p-3">
+                            <form>
+                                <label for="amplitude">Amplitude</label>
+                                <select id="amplitude" class="form-control">
+                                    <option value="-1">Negativa</option>
+                                    <option value="0.5">Metade</option>
+                                    <option value="1" selected>Normal</option>
+                                    <option value="2">Dobro</option>
+                                </select>
+                                <br>
+                                <label for="frequencia">Frequência</label>
+                                <select id="frequencia" class="form-control">
+                                    <option value="1" selected>Normal</option>
+                                    <option value="2">Dobro</option>
+                                </select>
+                                <br>
+                                <label for="fase">fase</label>
+                                <select id="fase" class="form-control">
+                                    <option value="0" selected>Normal</option>
+                                    <option value="4">90</option>
+                                    <option value="8">180</option>
+                                    <option value="12">270</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-10">
+                            <h4>Introdução</h4>
+                            <p class="text-justify">
+                                Apresentar a modulação digital e sua importância no mundo atual. Obter e manipular
+                                expressões analíticas que definam a capacidade e a eficiência de um canal. Obter curvas de
+                                desempenho de canais em função de seus parâmetros físicos. Determinar a banda passante B
+                                de uma linha de comunicação através de simulação. Determinar a capacidade máxima de um
+                                canal segundo o teorema de Nyquist e Shannon. Representar graficamente o Teorema de
+                                Nyquist em função do número de bits associados aos símbolos elétricos.
+                            </p>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-10">
+                            <p>
+                                Uma onda pode ser caracterizada através da seguinte equação:<br>
+                                <p class="text-center">&alpha;(t) = A sen (&omega;<sub>0</sub> t + &theta;)</p><br>
+                                &alpha;(t)= Amplitude instantânea da portadora no instante t<br>
+                                A = Amplitude máxima da portadora<br>
+                                &omega;<sub>0</sub> = Frequência angular da portadora (2 &pi; f)<br>
+                                &theta; = Fase da portadora<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <p class="text-justify">
+                                A partir da equação da onda vista acima, vê-se que podemos variar três componentes da onda
+                                para imprimir uma informação na portadora. Assim, variando amplitude, freqüência ou fase
+                                podemos "modular" a onda de acordo com a variação da onda moduladora (que contém a
+                                informação).
+                                <ul>
+                                    <li>Amplitude: a altura de uma onda</li>
+                                    <li>Freqüência: número de ciclos da onda por segundo (Hz = ciclos / s)</li>
+                                    <li>Fase: Posição instantânea da onda, em graus.</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-info">
+            <a class="navbar-brand" href="#">HiperDocs</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="conteudo.html">Conteúdo <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!--
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    -->
+                        <li class="nav-item dropup">
+                            <a class="nav-link dropdown-toggle" href="index.html" id="dropdown10" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Tópico</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown10">
+                                <a class="dropdown-item" href="#">Subtópico 1</a>
+                                <a class="dropdown-item" href="#">Subtópico 2</a>
+                                <a class="dropdown-item" href="#">Subtópico 3</a>
+                            </div>
+                        </li>
+                </ul>
+            </div>
+        </nav>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+        
+        function rotate(array, times) 
+        {
+            while (times--) {
+                var temp = array.shift();
+                array.push(temp)
+            }
+        }
+
+         $("#amplitude").change(function () {
+                var mult = parseFloat($("#amplitude").val());
+
+                setTimeout(function () {
+                    chart.unload({
+                        done: function () {
+                            chart.load({
+                                columns: [
+                                    ['x', '0', '45', '90', '135', '180', '225', '270', '315', '360'],
+                                    ['Onda', 0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7, 0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7],
+                                    ['Onda Modificada', mult * 0, mult * 0.7, mult * 1, mult * 0.7, mult * 0, mult * -0.7, mult * -1, mult * -0.7, mult * 0, mult * 0.7, mult * 1, mult * 0.7, mult * 0, mult * -0.7, mult * -1, mult * -0.7,]
+                                ]
+                            });
+                        }
+                    });
+                }, 100);
+            });
+
+            $("#fase").change(function () {
+                var pi = String.fromCharCode(960);
+                var phase = parseInt($("#fase").val());
+
+                var values = new Array(0, 0.37, 0.7, 0.92, 1, 0.92, 0.7, 0.37, 0, -0.37, -0.7, -0.92, -1, -0.92, -0.7, -0.37);
+
+                rotate(values, phase);
+                //console.log(values);
+                
+                setTimeout(function () {
+                    chart.unload({
+                        done: function () {
+                            chart.load({
+                                columns: [
+                                    ['x', '0', pi + '/6', pi + '/4', pi + '/3', pi + '/2', '2' + pi + '/3', '3' + pi + '/4', '5' + pi + '/6', pi, '7' + pi + '/6', '5' + pi + '/4', '4' + pi + '/3', '3' + pi + '/2', '5' + pi + '/3', '7' + pi + '/4', '11' + pi + '/6', '0'],
+                                    ['Onda', 0, 0.37, 0.7, 0.92, 1, 0.92, 0.7, 0.37, 0, -0.37, -0.7, -0.92, -1, -0.92, -0.7, -0.37],
+                                    ['Onda Modificada', values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9], values[10], values[11], values[12], values[13], values[14], values[15]]
+                                ]
+                            });
+                        }
+                    });
+                }, 100);
+                });
+
+            $("#frequencia").change(function () {
+                    var pi = String.fromCharCode(960);
+
+                    setTimeout(function () {
+                        chart.unload({
+                            done: function () {
+                                chart.load({
+                                    columns: [
+                                        ['x', '0', pi+'/6', pi+'/4', pi+'/3', pi+'/2', '2'+pi+'/3', '3'+pi+'/4', '5'+pi+'/6', pi, '7'+pi+'/6', '5'+pi+'/4', '4'+pi+'/3', '3'+pi+'/2', '5'+pi+'/3', '7'+pi+'/4', '11'+pi+'/6', '0'],
+                                        ['Onda', 0, 0.37, 0.7, 0.92, 1, 0.92, 0.7, 0.37, 0, -0.37, -0.7, -0.92, -1, -0.92, -0.7, -0.37],
+                                        ['Onda modificada', 0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7, 0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7, 0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7, 0, 0.7, 1, 0.7, 0, -0.7, -1, -0.7],
+                                        
+                                    ]
+                                });
+                            }
+                        });
+                    }, 100);
+                });
+    </script>
+  </body>
+</html>
