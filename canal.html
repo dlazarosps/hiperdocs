@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
+    
+    <!-- Load c3.css -->
+    <link href="node_modules/c3/c3.css" rel="stylesheet">
+    
+    <!-- Load d3.js and c3.js -->
+    <script src="node_modules/d3/dist/d3.min.js" charset="utf-8"></script>
+    <script src="node_modules/c3/c3.min.js"></script>
+    
+    <title>HiperDocs! - Canal</title>
+  </head>
+  <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="row align-items-center h-100">
+                        <div class="col-3"></div>
+                        <div class="col-6 h-75">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="75%" viewBox="0 0 14 16">
+                                <path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8h-2.5z" fill="#17a2b8" />
+                            </svg>
+                            <p class="lead text-center">Logo</p>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="jumbotron jumbotron-fluid bg-gradient-info p-2">
+                        <h1>Projeto de HiperDocumentos</h1>
+                        <p class="lead">Prototipo</p>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+            
+        <div class="container-fluid">
+            
+            <div class="row align-items-center">
+                <div class="col-1"></div>
+                <div class="col-5 border-top-0 border-bottom-0 border-info dashed mr-1">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            &nbsp;
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <h3> Teorema  Nyquist</h3>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 p-3">
+                            <div class="form-row align-items-center">
+                                
+                                <div class="col-auto">
+                                    <label class="sr-only" for="banda-nyq">Banda</label>
+                                    <div class="input-group mb-2">
+                                        <input type="number" min="100" max="10000" step="100" class="form-control" id="banda-nyq" placeholder="Banda" >
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">Hz</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <label class="sr-only" for="niveis">Níveis</label>
+                                    <div class="input-group mb-2">
+                                        <select id="niveis" class="form-control">
+                                            <option value="1">1</option>
+                                            <option value="2" selected>2</option>
+                                            <option value="4">4</option>
+                                            <option value="8">8</option>
+                                            <option value="16">16</option>
+                                            <option value="32">32</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                                <div class="input-group-text">Mmn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-info mb-2" id="submit-nyq">Calcular</button>
+                                </div>
+                                <div class="col-auto">
+                                    <label class="sr-only" for="resultado-nyq">Resultado</label>
+                                    <div class="input-group input-group-sm mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"> = </div>
+                                        </div>
+                                        <input type="text" class=" form-control form-control-sm" id="resultado-nyq" placeholder="Resultado" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 ">
+                            <hr class="border border-info dashed">
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 ">
+                            <h3>Teorema de Shannon</h3>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 p-3">
+                            <div class="form-row align-items-center">
+                            
+                                <div class="col-auto">
+                                    <label class="sr-only" for="banda-shn">Banda</label>
+                                    <div class="input-group mb-2">
+                                        <input type="number" min="100" max="10000" step="100" class="form-control" id="banda-shn" placeholder="Banda">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">Hz</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <label class="sr-only" for="ruido">Sinal Ruído</label>
+                                    <div class="input-group mb-2">
+                                        <select id="ruido" class="form-control">
+                                            <option value="0.25">-6</option>
+                                            <option value="0.5">-3</option>
+                                            <option value="1">0</option>
+                                            <option value="2" selected>3</option>
+                                            <option value="4">6</option>
+                                            <option value="10">10</option>
+                                            <option value="100">20</option>
+                                            <option value="1000">30</option>
+                                            
+                                        </select>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">dB</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-info mb-2" id="submit-shn">Calcular</button>
+                                </div>
+                                <div class="col-auto">
+                                    <label class="sr-only" for="resultado-shn">Resultado</label>
+                                    <div class="input-group input-group-sm mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"> = </div>
+                                        </div>
+                                        <input type="text" class=" form-control form-control-sm" id="resultado-shn" placeholder="Resultado" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10 ">
+                            <hr class="border border-info dashed">
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+                <div class="col-5 border-top-0 border-bottom-0 border-info dashed ml-1">
+                    <div class="row">
+                        <div class="col-10">
+                            <h4>A Máxima Capacidade de um Canal</h4>
+                            <p class="text-justify">
+                                A máxima capacidade de um canal de transmissão de dados é a taxa máxima de transmissão
+                                que pode passar através deste canal. A unidade desta medida é o bps (bit por segundo), e os
+                                teoremas básicos para encontrar esta capacidade máxima do sinal são o Teorema de Nyquist e
+                                o Teorema de Shannon.
+                            </p>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-10">
+                            <h5>Teorema de Nyquist</h5>
+                            <p class="text-justify">
+                                Em 1924, Nyquist publicou uma equação determinando a máxima capacidade de um canal
+                                desconsiderando a existência do ruído branco. A equação é a seguinte:<br><br>
+                                <strong><em>MCn = 2 * B * log<sub>2</sub>N</em></strong>
+                                <ul>
+                                    <li>MCn=Máxima capacidade do canal por Nyquist</li>
+                                    <li>B: largura de banda, medida em Hz;</li>
+                                    <li>N= número de níveis do sinal</li>
+                                </ul>
+                                <a href="#" data-toggle="collapse" data-target="#nyq"> <h5>&efDot;</h5> </a>
+                                <div id="nyq" class="collapse">
+                                    O valor de log<sub>2</sub>N pode ser encarado como a modulação multinível utilizada, pois se N é o
+                                    número de níveis, log<sub>2</sub>N é a modulação multinível. Por exemplo, para um dibit, 2 bits por
+                                    baud, N=4 (4 níveis: 00, 01, 10 e 11).
+                                    log<sub>2</sub>4 => log<sub>2</sub>2<sup>2</sup> => 2*log<sub>2</sub>2 => 2*1 => 2, ou seja, a própria modulação multinível.<br>
+                                    Assim, para facilitar a fórmula, pode-se representar que:<br>
+                                    <strong><em>MCn = 2 * B * Mmn</em></strong><br><br>
+                                    <p>
+                                        Mmn: modulação multinível que está sendo utilizada: monobit: Mmn=1; dibit: Mmn=2;
+                                        tribit: Mmn=3; tetrabit: Mmn=4 e assim por diante.<br>
+                                        A base do teorema diz que um canal com largura de banda B pode enviar no máximo 2B
+                                        valores de tensão diferentes por segundo, ou seja, no máximo pode-se alterar a onda portadora
+                                        a cada meio ciclo a fim de transmitir um sinal binário.<br>
+                                    </p>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <h5>Teorema de Shannon</h5>
+                            <p class="text-justify">
+                                O teorema de Shannon já leva em consideração a existência do ruído branco, impondo um
+                                limite para a máxima taxa de transmissão do canal, limitando a modulação multinível que
+                                pode ser utilizada.<br>
+                                Shannon provou, em 1948, que se um sinal está sendo enviado com uma potência S através de
+                                uma linha, e a potência do ruído é N, então a máxima capacidade de transmissão deste canal
+                                é:<br><br>
+                                <strong><em>MCs = B * log<sub>2</sub>(1+S/N)</em></strong><br>
+                                    <a href="#" data-toggle="collapse" data-target="#shn"><h5>&efDot;</h5> </a>
+                                    <div id="shn" class="collapse">
+
+                                        A razão entre a potência do sinal e a potência do ruído branco é conhecida como relação sinalruído,
+                                        normalmente sendo expressa em decibéis (dB). Para extrair o valor real utilizado na
+                                        fórmula de Shannon (número adimensional), deve-se utilizar a fórmula:<br>
+                                        <strong><em>nºdB= 10 * log<sub>10</sub>(S/N)</em></strong><br>
+
+                                    </div>
+                                </p>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    
+
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10 ">
+                    &nbsp;
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-2">
+                            <a href="modulacao.html" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Modulação">&lang;&lang; Tópico Anterior</a>
+                        </div>
+                        <div class="col-1">&nbsp;</div>
+                        <div class="col-2">
+                            <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Logaritmos">&lang; Conteúdo Anterior</a>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-2">
+                             <a href="#" class="btn btn-info btn-sm float-right" data-toggle="tooltip" data-placement="top" title="Exercícios">Proxímo Conteúdo &rang;</a>
+                        </div>
+                        <div class="col-1">&nbsp;</div>
+                        <div class="col-2">
+                            <a href="index.html" class="btn btn-info btn-sm float-right" data-toggle="tooltip" data-placement="top" title="Página Inicial">Proxímo Tópico &rang;&rang;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+        <nav class="navbar stick-bottom navbar-expand-sm navbar-dark bg-info my-2">
+            <a class="navbar-brand" href="#">HiperDocs</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home </a>
+                    </li>
+                    <!--
+                    <li class="nav-item">
+                        <a class="nav-link" href="conteudo.html">Conteúdo </a>
+                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    -->
+                    <li class="nav-item dropup active">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="dropdown10" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Tópicos <span class="sr-only">(current)</span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown10">
+                            <a class="dropdown-item" href="ondas.html">Análise de Sinais</a>
+                            <a class="dropdown-item" href="modulacao.html">Modulação</a>
+                            <a class="dropdown-item active" href="canal.html">Capacidade do Canal</a>
+                        </div>
+                    </li>
+                    <li class="p-1"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16">
+                            <path fill-rule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3l5 5z" fill="white"/>
+                        </svg>
+                    </li>
+                        <li class="nav-item dropup">
+                            <a class="nav-link dropdown-toggle" href="Ondas.html" id="dropdown11" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Subtópico</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown11">
+                                <a class="dropdown-item" href="#">Relembrando  Logaritmos</a>
+                                <a class="dropdown-item active" href="canal.html">Teorema de Nyquist</a>
+                                <a class="dropdown-item active" href="canal.html">Teorema de Shannon</a>
+                            </div>
+                        </li>
+                    <li class="p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16">
+                            <path fill-rule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3l5 5z" fill="white"/>
+                        </svg>
+                    </li>
+                    <li class="nav-item dropup">
+                        <a class="nav-link dropdown-toggle" href="canal.html" id="dropdown12" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Conteúdos</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown12">
+                            <a class="dropdown-item active" href="canal.html"> A Capacidade Máxima do Canal</a>
+                            <a class="dropdown-item" href="#">Exercícios</a>
+                            <a class="dropdown-item" href="#">Vídeos</a>
+                        </div>
+                    </li>
+                </ul>
+                <span class="navbar-text">Modulação Digital</span>
+            </div>
+        </nav>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+        });
+
+        function fun_nyq(banda, niveis) {
+            return (2 * banda * Math.log2(niveis));
+        }
+
+        function fun_shn(banda, ruido) {
+            return (banda * Math.log2(1 + ruido));
+        }
+
+        $("#submit-nyq").click(function() {
+            var niveis = parseInt($("#niveis").val());
+            var banda = (isNaN($("#banda-nyq").val())) ? parseInt($("#banda-nyq").val()) : 2400;
+            var nyq = fun_nyq(banda,niveis);
+
+            $("#resultado-nyq").addClass("is-valid");
+            $("#resultado-nyq").val(nyq);
+
+            setTimeout(() => {
+                $("#resultado-nyq").removeClass("is-valid");
+            }, 10000);
+        });
+
+        $("#submit-shn").click(function() {
+            var ruido = parseFloat($("#ruido").val());
+            var banda = (isNaN($("#banda-shn").val())) ? parseInt($("#banda-shn").val()) : 2400;
+            var shn = fun_shn(banda, ruido);
+
+            shn = shn.toLocaleString("de-DE");
+            $("#resultado-shn").addClass("is-valid");
+            $("#resultado-shn").val(shn);
+            
+            setTimeout(() => {
+                $("#resultado-shn").removeClass("is-valid");
+            }, 10000);
+        });
+
+    </script>
+  </body>
+</html>
